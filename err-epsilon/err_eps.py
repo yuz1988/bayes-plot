@@ -6,12 +6,12 @@ import matplotlib.pyplot as plt
 
 # data is hepar2
 methods = ['baseline', 'uniform', 'non-uniform']
-method = 'baseline'
+method = 'nonuniform'
 
 # read data
 data = pd.read_csv('data/' + method + '.txt')
 num_cols = ['100K', '500K', '1M', '5M']
-print(data)
+# print(data)
 
 # configuration
 mpl.rcParams['font.family'] = 'Arial'
@@ -46,17 +46,18 @@ plt.plot(xticks, data['1M'], marker='s', color='b')
 plt.plot(xticks, data['5M'], marker='+', color='k')
 
 plt.xticks(xticks)
-# plt.ylabel('mean error to truth')
-# plt.xlabel('training instances')
+plt.ylim(ymin=0)
+if method == 'baseline':
+    plt.ylim(ymax=0.01)
 
 # tick_pos = range(4)
 # ax.set_xticks(tick_pos)
 # ax.set_xticklabels(num_cols)
-plt.xlabel('approximation error $\epsilon$')
+plt.xlabel('approximation factor $\epsilon$')
 plt.ylabel('mean error to truth')
 
 if method == 'baseline':
-    plt.legend(methods)
+    plt.legend(num_cols, ncol=2)
 
-plt.show()
-# plt.savefig("figs/" + method + ".pdf", dpi=800, bbox_inches='tight')
+# plt.show()
+plt.savefig("figs/" + method + ".pdf", dpi=800, bbox_inches='tight')

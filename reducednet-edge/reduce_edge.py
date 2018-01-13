@@ -32,7 +32,7 @@ plt.plot(uniform[1], uniform[2], marker='s', color='b')
 plt.plot(nonuniform[1], nonuniform[2], marker='+', color='k')
 
 # ticks
-plt.xticks(exact[1])
+plt.xticks(exact[1], rotation=360-30)
 
 # xlim, ylim
 plt.ylim(ymin=0, ymax=8e8)

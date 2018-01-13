@@ -36,7 +36,7 @@ plt.plot(nonuniform[0], nonuniform[1], marker='+', color='k')
 plt.ylim(ymin=0, ymax=1e9)
 
 # ticks
-plt.xticks(exact[0])
+plt.xticks(exact[0], rotation=360-30)
 
 # labels
 plt.xlabel('number of variables')

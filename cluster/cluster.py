@@ -8,7 +8,7 @@ method = ['exact', 'baseline', 'uniform', 'non-uniform']
 # read data
 # alarm, hepar2, link, munin
 data_name = 'alarm'
-data = pd.read_csv(data_name + '.txt', header=None)
+data = pd.read_csv('./data/' + data_name + '.txt', header=None)
 exact = data[data[1] == 'exact']
 baseline = data[data[1] == 'baseline']
 uniform = data[data[1] == 'uniform']
