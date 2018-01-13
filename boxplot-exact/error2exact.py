@@ -45,26 +45,29 @@ mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # plt.savefig("figs/" + data_name + "-baseline.pdf", dpi=800, bbox_inches='tight')
 
 # uniform
-fig, ax = plt.subplots()
-ax.boxplot(uniform[num_cols].values, sym='')
+plt.figure(1)
+plt.boxplot(uniform[num_cols].values, sym='')
+ax = plt.gca()
 # xtick
 ax.set_xticklabels(num_cols)
 ax.set_yticks(yticks)
 ax.set_xlabel('training instances')
-ax.set_ylabel('relative error to truth')
+ax.set_ylabel('relative error to MLE')
 # ylim
 ax.set_ylim(ymax=ymax)
 # plt.show()
 plt.savefig("figs/" + data_name + "-uniform.pdf", dpi=800, bbox_inches='tight')
 
+
 # nonuniform
-fig, ax = plt.subplots()
-ax.boxplot(nonuniform[num_cols].values, sym='')
+plt.figure(2)
+plt.boxplot(nonuniform[num_cols].values, sym='')
+ax = plt.gca()
 # xtick
 ax.set_xticklabels(num_cols)
 ax.set_yticks(yticks)
 ax.set_xlabel('training instances')
-ax.set_ylabel('relative error to truth')
+ax.set_ylabel('relative error to MLE')
 # ylim
 ax.set_ylim(ymax=ymax)
 # plt.show()

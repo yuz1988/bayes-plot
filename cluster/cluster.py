@@ -23,6 +23,7 @@ mpl.rcParams['font.size'] = 25
 mpl.rcParams['xtick.labelsize'] = 18
 mpl.rcParams['ytick.labelsize'] = 18
 mpl.rcParams['legend.fontsize'] = 18
+mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # mpl.rcParams['legend.frameon'] = False
 
 
@@ -67,7 +68,7 @@ plt.legend(method, ncol=2)
 
 # show or save
 # plt.show()
-plt.savefig("figs/" + data_name + "-time.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("figs/" + data_name + "-time.pdf", dpi=800, bbox_inches='tight')
 
 
 # Throughput
@@ -100,4 +101,4 @@ plt.legend(method, ncol=2)
 
 # show or save
 # plt.show()
-plt.savefig("figs/" + data_name + "-throughput.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("figs/" + data_name + "-throughput.pdf", dpi=800, bbox_inches='tight')

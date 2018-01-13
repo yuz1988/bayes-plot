@@ -17,10 +17,11 @@ nonuniform = pd.read_csv(folder_name + 'nonuniform.txt', header=None)
 mpl.rcParams['font.family'] = 'Arial'
 mpl.rcParams['lines.linewidth'] = 2.5
 mpl.rcParams['lines.markersize'] = 10
-mpl.rcParams['font.size'] = 22
-mpl.rcParams['xtick.labelsize'] = 16
-mpl.rcParams['ytick.labelsize'] = 16
-mpl.rcParams['legend.fontsize'] = 15
+mpl.rcParams['font.size'] = 25
+mpl.rcParams['xtick.labelsize'] = 18
+mpl.rcParams['ytick.labelsize'] = 18
+mpl.rcParams['legend.fontsize'] = 18
+mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # mpl.rcParams['legend.frameon'] = False
 
 
@@ -34,18 +35,18 @@ plt.plot(nonuniform[1], nonuniform[2], marker='+', color='k')
 plt.xticks(exact[1])
 
 # xlim, ylim
-plt.ylim(ymin=0)
+plt.ylim(ymin=0, ymax=8e8)
 
 # labels
 plt.xlabel('number of edges')
-plt.ylabel('communication messages')
+plt.ylabel('number of messages')
 
 # legend
-plt.legend(method)
+# plt.legend(method)
 
 # show or save
 # plt.show()
-plt.savefig("figs/reducednet-edge.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("figs/reducednet-edge.pdf", dpi=800, bbox_inches='tight')
 
 
 
@@ -67,4 +68,4 @@ plt.legend(method)
 
 # show or save
 # plt.show()
-plt.savefig("./figs/reducednet-edge-logscale.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("./figs/reducednet-edge-logscale.pdf", dpi=800, bbox_inches='tight')

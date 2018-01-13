@@ -18,10 +18,11 @@ nonuniform = pd.read_csv(folder_name + 'nonuniform.txt', header=None)
 mpl.rcParams['font.family'] = 'Arial'
 mpl.rcParams['lines.linewidth'] = 2.5
 mpl.rcParams['lines.markersize'] = 10
-mpl.rcParams['font.size'] = 22
-mpl.rcParams['xtick.labelsize'] = 16
-mpl.rcParams['ytick.labelsize'] = 16
-mpl.rcParams['legend.fontsize'] = 15
+mpl.rcParams['font.size'] = 25
+mpl.rcParams['xtick.labelsize'] = 18
+mpl.rcParams['ytick.labelsize'] = 18
+mpl.rcParams['legend.fontsize'] = 18
+mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # mpl.rcParams['legend.frameon'] = False
 
 
@@ -32,21 +33,21 @@ plt.plot(uniform[0], uniform[1], marker='s', color='b')
 plt.plot(nonuniform[0], nonuniform[1], marker='+', color='k')
 
 # xlim, ylim
-plt.ylim(ymin=0)
+plt.ylim(ymin=0, ymax=1e9)
 
 # ticks
 plt.xticks(exact[0])
 
 # labels
 plt.xlabel('number of variables')
-plt.ylabel('communication messages')
+plt.ylabel('number of messages')
 
 # legend
 plt.legend(method)
 
 # show or save
 # plt.show()
-plt.savefig("figs/reducednet-var.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("figs/reducednet-var.pdf", dpi=800, bbox_inches='tight')
 
 
 plt.figure(2)
@@ -60,11 +61,11 @@ plt.xticks(exact[0])
 
 # labels
 plt.xlabel('number of variables')
-plt.ylabel('communication messages')
+plt.ylabel('number of messages')
 
 # legend
 plt.legend(method)
 
 # show or save
 # plt.show()
-plt.savefig("./figs/reducednet-var-logscale.pdf", dpi=600, bbox_inches='tight')
+plt.savefig("./figs/reducednet-var-logscale.pdf", dpi=800, bbox_inches='tight')
