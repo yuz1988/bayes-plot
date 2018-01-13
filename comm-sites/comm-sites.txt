@@ -1,0 +1,16 @@
+sites,method,msg
+20,baseline,8690285
+20,uniform,2705738
+20,nonuniform,2259108
+40,baseline,12271850
+40,uniform,3634407
+40,nonuniform,3206153
+60,baseline,15317525
+60,uniform,5108947
+60,nonuniform,4888447
+80,baseline,17329838
+80,uniform,5545227
+80,nonuniform,4978153
+100,baseline,18591741
+100,uniform,6604263
+100,nonuniform,6101584

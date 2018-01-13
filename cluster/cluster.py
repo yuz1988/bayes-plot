@@ -13,7 +13,7 @@ exact = data[data[1] == 'exact']
 baseline = data[data[1] == 'baseline']
 uniform = data[data[1] == 'uniform']
 nonuniform = data[data[1] == 'nonuniform']
-print(exact)
+# print(exact)
 
 # configuration
 mpl.rcParams['font.family'] = 'Arial'
@@ -22,31 +22,31 @@ mpl.rcParams['lines.markersize'] = 10
 mpl.rcParams['font.size'] = 25
 mpl.rcParams['xtick.labelsize'] = 18
 mpl.rcParams['ytick.labelsize'] = 18
-mpl.rcParams['legend.fontsize'] = 18
+mpl.rcParams['legend.fontsize'] = 16
 mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # mpl.rcParams['legend.frameon'] = False
 
 
-# msg transmitted
-plt.figure(0)
-plt.plot(exact[0], exact[2], marker='o', color='r')
-plt.plot(baseline[0], baseline[2], marker='*', color='g')
-plt.plot(uniform[0], uniform[2], marker='s', color='b')
-plt.plot(nonuniform[0], nonuniform[2], marker='+', color='k')
-
-# labels
-plt.xlabel('number of sites')
-plt.ylabel('number of messages')
-
-# xlim, ylim
-plt.ylim(ymin=0)
-
-# legend
-plt.legend(method, ncol=2)
-
-# show or save
-# plt.show()
-plt.savefig("figs/" + data_name + "-message.pdf", dpi=600, bbox_inches='tight')
+# # msg transmitted
+# plt.figure(0)
+# plt.plot(exact[0], exact[2], marker='o', color='r')
+# plt.plot(baseline[0], baseline[2], marker='*', color='g')
+# plt.plot(uniform[0], uniform[2], marker='s', color='b')
+# plt.plot(nonuniform[0], nonuniform[2], marker='+', color='k')
+#
+# # labels
+# plt.xlabel('number of sites')
+# plt.ylabel('number of messages')
+#
+# # xlim, ylim
+# plt.ylim(ymin=0)
+#
+# # legend
+# plt.legend(method, ncol=2)
+#
+# # show or save
+# # plt.show()
+# plt.savefig("figs/" + data_name + "-message.pdf", dpi=600, bbox_inches='tight')
 
 
 # runtime delay
@@ -61,10 +61,11 @@ plt.xlabel('number of sites')
 plt.ylabel('runtime (sec)')
 
 # xlim, ylim
-plt.ylim(ymin=0)
+plt.ylim(ymin=0, ymax=450)
 
 # legend
-plt.legend(method, ncol=2)
+if data_name == 'alarm':
+    plt.legend(method, ncol=2, frameon=False)
 
 # show or save
 # plt.show()
@@ -97,7 +98,8 @@ plt.ylim(ymin=0)
 #     plt.ylim(ymax=1200)
 
 # legend
-plt.legend(method, ncol=2)
+if data_name == 'alarm':
+    plt.legend(method, ncol=2, bbox_to_anchor=(0.5, -0.05), loc='lower center', frameon=False)
 
 # show or save
 # plt.show()

@@ -1,0 +1,11 @@
+num,method,msg
+1M,uniform,9117230
+5M,uniform,17251005
+10M,uniform,21611437
+15M,uniform,24369987
+20M,uniform,26275186
+1M,nonuniform,7719744
+5M,nonuniform,12969441
+10M,nonuniform,15436963
+15M,nonuniform,16983867
+20M,nonuniform,18063085
