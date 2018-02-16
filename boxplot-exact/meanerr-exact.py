@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 methods = ['baseline', 'uniform', 'non-uniform']
 
 # alarm, hepar2, link, munin
-data_name = 'link'
+data_name = 'munin'
 
 # read data
 baseline = pd.read_csv('data/' + data_name + '-baseline.txt')
@@ -39,7 +39,7 @@ ax.bar(bar_positions, mean_uniform, 0.2, hatch='-')
 bar_positions = np.arange(4) + 1.2
 ax.bar(bar_positions, mean_nonuniform, 0.2, hatch='\\', color='b')
 
-tick_pos = [1, 2, 3]
+tick_pos = [1, 2, 3, 4]
 ax.set_xticks(tick_pos)
 ax.set_xticklabels(num_cols)
 plt.xlabel('training instances')
@@ -59,4 +59,4 @@ if data_name == 'alarm':
 
 
 # plt.show()
-plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/meanerr/" + data_name + ".pdf", dpi=800, bbox_inches='tight')

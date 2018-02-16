@@ -22,7 +22,7 @@ mpl.rcParams['lines.markersize'] = 10
 mpl.rcParams['font.size'] = 25
 mpl.rcParams['xtick.labelsize'] = 18
 mpl.rcParams['ytick.labelsize'] = 18
-mpl.rcParams['legend.fontsize'] = 16
+mpl.rcParams['legend.fontsize'] = 17
 mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # mpl.rcParams['legend.frameon'] = False
 
@@ -61,11 +61,11 @@ plt.xlabel('number of sites')
 plt.ylabel('runtime (sec)')
 
 # xlim, ylim
-plt.ylim(ymin=0, ymax=450)
+plt.ylim(ymin=0, ymax=480)
 
 # legend
 if data_name == 'alarm':
-    plt.legend(method, ncol=2, frameon=False)
+    plt.legend(method, ncol=2, columnspacing=0.5, frameon=True)
 
 # show or save
 # plt.show()
@@ -98,8 +98,9 @@ plt.ylim(ymin=0)
 #     plt.ylim(ymax=1200)
 
 # legend
-if data_name == 'alarm':
-    plt.legend(method, ncol=2, bbox_to_anchor=(0.5, -0.05), loc='lower center', frameon=False)
+# if data_name == 'alarm':
+#     plt.legend(method, ncol=2, bbox_to_anchor=(0.5, -0.05),
+#                loc='lower center', columnspacing=0.5)
 
 # show or save
 # plt.show()

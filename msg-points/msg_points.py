@@ -38,28 +38,24 @@ mpl.rcParams['figure.figsize'] = [5.2, 3.9]
 # plot
 fig, ax = plt.subplots()
 
-# log plot
+# bar-plot log-scale
 # plt.yscale('log')
-# bar_positions = np.arange(4) + 0.7
-# ax.bar(bar_positions, df['exact'], 0.2, hatch='//', color='r', log=True)
-# bar_positions = np.arange(4) + 0.9
-# ax.bar(bar_positions, df['baseline'], 0.2, hatch='x', color='g', log=True)
-# bar_positions = np.arange(4) + 1.1
-# ax.bar(bar_positions, df['uniform'], 0.2, hatch='-', log=True)
-# bar_positions = np.arange(4) + 1.3
-# ax.bar(bar_positions, df['nonuniform'], 0.2, hatch='\\', color='b', log=True)
+bar_positions = np.arange(4) + 0.7
+ax.bar(bar_positions, df['exact'], 0.2, hatch='//', color='r', log=True)
+bar_positions = np.arange(4) + 0.9
+ax.bar(bar_positions, df['baseline'], 0.2, hatch='x', color='g', log=True)
+bar_positions = np.arange(4) + 1.1
+ax.bar(bar_positions, df['uniform'], 0.2, hatch='-', log=True)
+bar_positions = np.arange(4) + 1.3
+ax.bar(bar_positions, df['nonuniform'], 0.2, hatch='\\', color='b', log=True)
 # plt.ylim(ymax=1e9)
 
-plt.semilogy(range(4), exact, marker='o', color='r')
-plt.semilogy(range(4), baseline, marker='*', color='g')
-plt.semilogy(range(4), uniform, marker='s', color='b')
-plt.semilogy(range(4), nonuniform, marker='+', color='k')
+# plt.semilogy(range(4), exact, marker='o', color='r')
+# plt.semilogy(range(4), baseline, marker='*', color='g')
+# plt.semilogy(range(4), uniform, marker='s', color='b')
+# plt.semilogy(range(4), nonuniform, marker='+', color='k')
 
-# plt.xticks(range(4), num_cols)
-# plt.ylabel('mean error to truth')
-# plt.xlabel('training instances')
-
-tick_pos = range(4)
+tick_pos = range(1, 5, 1)
 ax.set_xticks(tick_pos)
 ax.set_xticklabels(num_cols)
 plt.xlabel('training instances')
