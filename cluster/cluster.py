@@ -65,11 +65,11 @@ plt.ylim(ymin=0, ymax=480)
 
 # legend
 if data_name == 'alarm':
-    plt.legend(method, ncol=2, columnspacing=0.5, frameon=True)
+    plt.legend(method, ncol=2, columnspacing=0.5, frameon=False, fancybox=True)
 
 # show or save
 # plt.show()
-plt.savefig("figs/" + data_name + "-time.pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/" + data_name + "-cluster.pdf", dpi=800, bbox_inches='tight', transparent=True)
 
 
 # Throughput

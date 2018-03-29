@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 methods = ['exact', 'baseline', 'uniform', 'non-uniform']
 
 # alarm, hepar2, link, munin
-data_name = 'munin'
+data_name = 'alarm'
 
 # read data
 exact = pd.read_csv('data/' + data_name + '-exact.txt')
@@ -59,7 +59,7 @@ plt.xlabel('training instances')
 plt.ylabel('mean error to truth')
 
 if data_name == 'alarm':
-    plt.legend(methods)
+    plt.legend(methods, frameon=False, fancybox=True)
 
 # plt.show()
-plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)

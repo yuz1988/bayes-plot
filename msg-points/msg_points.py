@@ -13,7 +13,7 @@ def func(file_name):
 methods = ['exact', 'baseline', 'uniform', 'non-uniform']
 
 # alarm, hepar2, link, munin
-data_name = 'munin'
+data_name = 'alarm'
 
 # read data
 exact = func('data/' + data_name + '-exact.txt')
@@ -62,7 +62,7 @@ plt.xlabel('training instances')
 plt.ylabel('number of messages')
 
 if data_name == 'alarm':
-    plt.legend(methods, loc='upper left')
+    plt.legend(methods, loc='upper left', frameon=False, fancybox=True)
 
 # plt.show()
-plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)

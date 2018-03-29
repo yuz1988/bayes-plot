@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 methods = ['baseline', 'uniform', 'non-uniform']
 
 # alarm, hepar2, link, munin
-data_name = 'munin'
+data_name = 'alarm'
 
 # read data
 baseline = pd.read_csv('data/' + data_name + '-baseline.txt')
@@ -55,8 +55,8 @@ plt.ylabel('mean error to MLE')
 
 if data_name == 'alarm':
     plt.ylim(ymax=0.02)
-    plt.legend(methods)
+    plt.legend(methods, frameon=False, fancybox=True)
 
 
 # plt.show()
-plt.savefig("figs/meanerr/" + data_name + ".pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/meanerr/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)
