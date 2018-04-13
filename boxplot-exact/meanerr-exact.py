@@ -54,9 +54,16 @@ plt.ylabel('mean error to MLE')
 # plt.xlabel('training instances')
 
 if data_name == 'alarm':
-    plt.ylim(ymax=0.02)
+    plt.ylim(ymax=0.11)
+    plt.xlim(xmin=0.5)
     plt.legend(methods, frameon=False, fancybox=True)
 
+# budget line
+x = [0,1,2,3,4,5]
+y = [0.1]*6
+plt.plot(x, y)
+plt.text(1, 0.09, r'Error Budget', fontdict={'size': 16})
 
 # plt.show()
-plt.savefig("figs/meanerr/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/meanerr/" + data_name + "-mle.png", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/meanerr/" + data_name + "-mle.pdf", dpi=800, bbox_inches='tight', transparent=True)

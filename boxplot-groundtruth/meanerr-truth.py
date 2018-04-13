@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 methods = ['exact', 'baseline', 'uniform', 'non-uniform']
 
 # alarm, hepar2, link, munin
-data_name = 'alarm'
+data_name = 'hepar2'
 
 # read data
 exact = pd.read_csv('data/' + data_name + '-exact.txt')
@@ -58,8 +58,18 @@ ax.set_xticklabels(num_cols)
 plt.xlabel('training instances')
 plt.ylabel('mean error to truth')
 
-if data_name == 'alarm':
+if data_name == 'hepar2':
+    plt.ylim(ymax=0.11)
+    plt.xlim(xmin=0.4)
     plt.legend(methods, frameon=False, fancybox=True)
 
+# budget line
+x = [0,1,2,3,4,5]
+y = [0.1]*6
+plt.plot(x, y)
+plt.text(1, 0.09, r'Error Budget', fontdict={'size':16})
+
+
 # plt.show()
-plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/" + data_name + "-truth.png", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/" + data_name + "-truth.pdf", dpi=800, bbox_inches='tight', transparent=True)

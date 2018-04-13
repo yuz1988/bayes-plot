@@ -69,7 +69,7 @@ if data_name == 'alarm':
 
 # show or save
 # plt.show()
-plt.savefig("figs/" + data_name + "-cluster.pdf", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/" + data_name + "-cluster.png", dpi=800, bbox_inches='tight', transparent=True)
 
 
 # Throughput
@@ -104,4 +104,4 @@ plt.ylim(ymin=0)
 
 # show or save
 # plt.show()
-plt.savefig("figs/" + data_name + "-throughput.pdf", dpi=800, bbox_inches='tight')
+plt.savefig("figs/" + data_name + "-throughput.png", dpi=800, bbox_inches='tight')

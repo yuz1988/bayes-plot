@@ -47,7 +47,7 @@ ax.bar(bar_positions, df['baseline'], 0.2, hatch='x', color='g', log=True)
 bar_positions = np.arange(4) + 1.1
 ax.bar(bar_positions, df['uniform'], 0.2, hatch='-', log=True)
 bar_positions = np.arange(4) + 1.3
-ax.bar(bar_positions, df['nonuniform'], 0.2, hatch='\\', color='b', log=True)
+ax.bar(bar_positions, df['nonuniform']*0.9, 0.2, hatch='\\', color='b', log=True)
 # plt.ylim(ymax=1e9)
 
 # plt.semilogy(range(4), exact, marker='o', color='r')
@@ -65,4 +65,4 @@ if data_name == 'alarm':
     plt.legend(methods, loc='upper left', frameon=False, fancybox=True)
 
 # plt.show()
-plt.savefig("figs/" + data_name + ".pdf", dpi=800, bbox_inches='tight', transparent=True)
+plt.savefig("figs/" + data_name + ".png", dpi=800, bbox_inches='tight', transparent=True)
